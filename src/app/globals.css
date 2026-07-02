@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Brand colors — from Figma file MXzrDNHxO60Wbck8vjgvyN */
+  --color-cream: #efead3;
+  --color-cream-alt: #f8f5ec;
+  --color-red: #bd3332;
+  --color-red-dark: #5b0202;
+  --color-hairline: #e4e0d7;
+  --color-whatsapp: #00bb64;
+  --color-ink: #050505;
+  --color-ink-soft: #101010;
+  --color-placeholder: #d9d9d9;
+
+  /* Extended brand palette from the Figma style board — not used on Home/PDP yet */
+  --color-brown: #4a2f26;
+  --color-mustard: #dc9b2e;
+  --color-rust: #cc5a29;
+  --color-olive: #8a8f52;
+
+  /* Fonts */
+  --font-metropolis: var(--font-metropolis-raw), sans-serif;
+  --font-display: var(--font-chelsea-market-raw), cursive;
+
+  /* Button/chip radii */
+  --radius-btn: 9px;
+  --radius-chip: 5px;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
