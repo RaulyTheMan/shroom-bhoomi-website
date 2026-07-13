@@ -16,28 +16,30 @@ export function Nav() {
     <header className="absolute top-0 inset-x-0 z-50 px-4 pt-4 lg:px-6 lg:pt-6">
       <div className="bg-cream rounded-2xl shadow-sm overflow-hidden max-w-[1728px] mx-auto">
         <div className="px-6 lg:px-10 py-5 flex items-center justify-between">
-          <Logo variant="nav" />
+          <div className="shrink-0">
+            <Logo variant="nav" />
+          </div>
 
-          <nav className="hidden md:flex items-center gap-10">
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-10">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="font-metropolis font-semibold text-[20px] text-ink hover:text-red transition-colors duration-150 ease-out"
+                className="font-metropolis font-semibold text-[20px] text-ink hover:text-red transition-colors duration-150 ease-out whitespace-nowrap"
               >
                 {link.label}
               </Link>
             ))}
           </nav>
 
-          <div className="flex items-center gap-3">
-            <Button href={WHATSAPP_LINK} variant="whatsapp" className="hidden sm:inline-flex">
+          <div className="flex items-center gap-3 shrink-0">
+            <Button href={WHATSAPP_LINK} variant="whatsapp" className="hidden sm:inline-flex shrink-0">
               WhatsApp
             </Button>
             <CartBadge />
             <button
               type="button"
-              className="md:hidden inline-flex items-center justify-center w-10 h-10 text-ink rounded-full transition-colors duration-150 ease-out hover:text-red focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red"
+              className="lg:hidden inline-flex items-center justify-center w-10 h-10 text-ink rounded-full transition-colors duration-150 ease-out hover:text-red focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red shrink-0"
               aria-label="Toggle menu"
               aria-expanded={mobileOpen}
               onClick={() => setMobileOpen((v) => !v)}
@@ -83,7 +85,7 @@ export function Nav() {
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: DURATION.moderate, ease: EASE.inOut }}
-              className="md:hidden flex flex-col gap-1 px-6 overflow-hidden"
+              className="lg:hidden flex flex-col gap-1 px-6 overflow-hidden"
             >
               {NAV_LINKS.map((link) => (
                 <Link

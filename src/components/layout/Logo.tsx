@@ -5,27 +5,24 @@ type LogoProps = {
   variant?: "nav" | "footer";
 };
 
-const SIZES = {
-  nav: { width: 129, height: 51 },
-  footer: { width: 245, height: 96 },
-};
-
 const SRC = {
   nav: "/images/logo/logo-nav.png",
   footer: "/images/logo/logo-footer.png",
 };
 
-// Tailwind's preflight resets `img { height: auto }`, which fights next/image's
-// width/height attributes and triggers a Next.js dev warning + potential CLS.
-// Explicit w-*/h-* classes (class selector) win over that element-selector
-// reset, so both dimensions stay locked to the intended fixed size.
+// Both source files are 1545x605 (ratio 309:121). Pass that exact ratio as
+// the intrinsic width/height so Next.js's aspect-ratio check always matches
+// the file, regardless of display size — Tailwind's preflight resets
+// `img { height: auto }`, which fights arbitrary width/height props unless
+// CSS classes (higher specificity) also lock the actual rendered box.
+const INTRINSIC = { width: 309, height: 121 };
+
 const IMG_CLASS = {
   nav: "w-[129px] h-[51px]",
   footer: "w-[245px] h-[96px]",
 };
 
 export function Logo({ variant = "nav" }: LogoProps) {
-  const { width, height } = SIZES[variant];
   return (
     <Link
       href="/"
@@ -35,8 +32,8 @@ export function Logo({ variant = "nav" }: LogoProps) {
       <Image
         src={SRC[variant]}
         alt="Shroom Bhoomi"
-        width={width}
-        height={height}
+        width={INTRINSIC.width}
+        height={INTRINSIC.height}
         priority={variant === "nav"}
         className={IMG_CLASS[variant]}
       />
