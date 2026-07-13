@@ -13,7 +13,7 @@ export function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="w-full px-4 pt-4 lg:px-6 lg:pt-6">
+    <header className="absolute top-0 inset-x-0 z-50 px-4 pt-4 lg:px-6 lg:pt-6">
       <div className="bg-cream rounded-2xl shadow-sm overflow-hidden max-w-[1728px] mx-auto">
         <div className="px-6 lg:px-10 py-5 flex items-center justify-between">
           <Logo variant="nav" />

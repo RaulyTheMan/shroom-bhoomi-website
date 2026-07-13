@@ -23,7 +23,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col font-metropolis">
         <Nav />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 pt-[120px] lg:pt-[135px]">{children}</main>
         <Footer />
         <CartDrawer />
       </body>

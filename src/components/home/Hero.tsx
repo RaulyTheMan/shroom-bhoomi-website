@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/Button";
 
 export function Hero() {
   return (
-    <section className="relative w-full h-[420px] sm:h-[560px] lg:h-[750px] overflow-hidden">
+    <section className="relative w-full h-[480px] sm:h-[600px] lg:h-[750px] overflow-hidden -mt-[120px] lg:-mt-[135px]">
       <Image
         src="/images/home/hero-bg.jpg"
         alt="Inside the Shroom Bhoomi mushroom farm"
@@ -13,7 +13,7 @@ export function Hero() {
         sizes="100vw"
       />
       <div className="absolute inset-0 bg-black/25" />
-      <div className="relative z-10 h-full flex flex-col justify-center gap-6 px-6 sm:px-10 lg:px-[50px] max-w-[500px]">
+      <div className="relative z-10 h-full flex flex-col gap-6 px-6 sm:px-10 lg:px-[50px] pt-[130px] sm:pt-[130px] lg:pt-[175px] max-w-[500px]">
         <h1 className="font-metropolis font-bold text-4xl sm:text-5xl lg:text-[64px] leading-tight text-white">
           Straight from the Farm
         </h1>
