@@ -28,7 +28,7 @@ export function ImageGalleryRow() {
         ))}
       </div>
       <div className="flex justify-center mt-8">
-        <Button href="/shop" variant="filled">
+        <Button href="/all" variant="filled">
           Shop All
         </Button>
       </div>
